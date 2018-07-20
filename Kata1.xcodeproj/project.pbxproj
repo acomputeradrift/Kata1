@@ -8,6 +8,7 @@
 
 /* Begin PBXBuildFile section */
 		7DE3D67921026B99004938BC /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = 7DE3D67821026B99004938BC /* main.m */; };
+		7DE3D68121026C3B004938BC /* NumberRepeater.m in Sources */ = {isa = PBXBuildFile; fileRef = 7DE3D68021026C3B004938BC /* NumberRepeater.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXCopyFilesBuildPhase section */
@@ -25,6 +26,8 @@
 /* Begin PBXFileReference section */
 		7DE3D67521026B99004938BC /* Kata1 */ = {isa = PBXFileReference; explicitFileType = "compiled.mach-o.executable"; includeInIndex = 0; path = Kata1; sourceTree = BUILT_PRODUCTS_DIR; };
 		7DE3D67821026B99004938BC /* main.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
+		7DE3D67F21026C3B004938BC /* NumberRepeater.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = NumberRepeater.h; sourceTree = "<group>"; };
+		7DE3D68021026C3B004938BC /* NumberRepeater.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = NumberRepeater.m; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -58,6 +61,8 @@
 			isa = PBXGroup;
 			children = (
 				7DE3D67821026B99004938BC /* main.m */,
+				7DE3D67F21026C3B004938BC /* NumberRepeater.h */,
+				7DE3D68021026C3B004938BC /* NumberRepeater.m */,
 			);
 			path = Kata1;
 			sourceTree = "<group>";
@@ -118,6 +123,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				7DE3D68121026C3B004938BC /* NumberRepeater.m in Sources */,
 				7DE3D67921026B99004938BC /* main.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
