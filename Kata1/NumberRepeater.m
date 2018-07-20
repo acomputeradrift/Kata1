@@ -21,8 +21,21 @@
 - (NSString *)process
 {
     //Unpackage the array contents into a string
-    NSString *combinedStuff = [_toBeRetreivedLater componentsJoinedByString:@"separator"];
-    return combinedStuff;
+    NSNumber *multiplier = _toBeRetreivedLater[0][1];
+    NSInteger intMultiplier = [multiplier integerValue];
+    NSNumber *displayNumber = _toBeRetreivedLater[0][0];
+    NSString *stringFromObject = [NSString stringWithFormat:@"%@", displayNumber];
+    //NSInteger intDisplayNumber = [displayNumber integerValue];
+    //NSLog(@"%ld", (long)value);
+    for (int i = 0; i < intMultiplier; i++)
+    {
+        
+       
+        NSString *smashedTogether = [stringFromObject stringByAppendingString:stringFromObject];
+        
+    }
+    NSLog(@"%@", smashedTogether);
+    return @"Test";
 }
 
 @end
