@@ -26,89 +26,48 @@
     
     //Unpackage the multiplier for the for loop as an NSNumber
     
-    // this loop gets me the multiple number
+   
     int row =0;
-    int column = 1;
     NSMutableArray *multiplierArray = [NSMutableArray new];
+    
+     // this loop gets me the multiple number
     for (NSArray *count in _toBeRetreivedLater)
     {
-        //NSLog (@"%@", _toBeRetreivedLater[row][column]); //proves where the single number is
-        NSNumber *multiplier = _toBeRetreivedLater[row][column]; //loads one object into variable
-        //NSInteger intMultiplier = [multiplier integerValue]; // converts one object to comparable number for for loop
+        NSNumber *multiplier = _toBeRetreivedLater[row][1]; //loads one object into variable
         [multiplierArray addObject:multiplier];//adds the one number to the new array
         row = row+1;
     }
     
-    //NSString *whatsInTheMultiplierArray = [multiplierArray componentsJoinedByString:@""];
-    //NSLog (@"%@", whatsInTheMultiplierArray);
+    
     row=0;
-    column=0;
-    
-    
+    NSMutableArray *displayArray = [NSMutableArray new]; //creates array
+
     // this for loop gets me the display number
     for (NSArray *count in _toBeRetreivedLater)
     {
         //NSLog (@"%@", _toBeRetreivedLater[row][column]);  //proves the display number
-        NSNumber *displayNumber = _toBeRetreivedLater[row][column]; //pulls display numbers out
-        // load the display objects into an separate array
-         NSMutableArray *displayArray = [NSMutableArray new]; //creates array
-        
-        
-        // pull the first number out of the array and use it for the loop
-        //int next = 0;
-        NSNumber *multiplier2 = multiplierArray[row];
+        NSNumber *displayNumber = _toBeRetreivedLater[row][0]; //pulls display numbers out
+        //NSMutableArray *displayArray = [NSMutableArray new]; //creates array
+        NSNumber *multiplier2 = multiplierArray[row];// pull the first number out of the array and use it for the loop
         NSInteger intMultiplier = [multiplier2 integerValue];
-        for (int i = 0; i < intMultiplier; i++)
-            //for (NSNumber *count in multiplierArray) //get intMuliplier from other array
+        if (row >= 1)
+        {
+            [displayArray addObject:@","];
+        }
+       
+        for (int i = 0; i < intMultiplier; i++) //run this loop as many times as the value of the multiplier
             {
+                [displayArray addObject:displayNumber];//load the displayNumber into an mutable array as objects
                 
-               //load the displayNumber into an mutable array as objects
-                [displayArray addObject:displayNumber];
             }
         row = row+1;
-        
-         NSString *whatsInTheDisplayArray = [displayArray componentsJoinedByString:@""];
-         NSLog (@"%@", whatsInTheDisplayArray);
+       
     }
-        
-
-    
-//    for (NSArray *count2 in _toBeRetreivedLater)
-//    {
-//        NSLog (@"%@", _toBeRetreivedLater[row][column]);
-//        column = column+1;
-//    }
-    //NSNumber *multiplier = _toBeRetreivedLater[row][column];
-   // NSString *whatsInTheArray = [_toBeRetreivedLater componentsJoinedByString:@""];
-   // NSLog (@"%@", whatsInTheArray);
-    
-    
-    //For some reason I have to then turn it into an NSInteger for use
-    //NSInteger intMultiplier = [multiplier integerValue];
-   
-    
-    // Break out the display number for adding to new array a certain number of times
-   // NSNumber *displayNumber = _toBeRetreivedLater[0][0];
-   
-    //create the new array for only the display number
-   // NSMutableArray *displayArray = [NSMutableArray new];
-    
-    
-//    for (int i = 0; i < intMultiplier; i++)
-//    {
-//       //load the displayNumber into an mutable array as objects
-//        [displayArray addObject:displayNumber];
-//    }
-//
-//    // print the array as a string
-//    NSString *printedResults = [displayArray componentsJoinedByString:@""];
-//    NSLog (@"%@", printedResults);
-    
-
+    NSLog (@"%@", [displayArray componentsJoinedByString:@""]);
     return @"";
 }
 
 @end
-// Ok what does this have to do?
+
     
     
