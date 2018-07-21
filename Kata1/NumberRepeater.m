@@ -39,7 +39,8 @@
         row = row+1;
     }
     
-    NSLog (@"%@", multiplierArray);
+    //NSString *whatsInTheMultiplierArray = [multiplierArray componentsJoinedByString:@""];
+    //NSLog (@"%@", whatsInTheMultiplierArray);
     row=0;
     column=0;
     
@@ -53,17 +54,23 @@
          NSMutableArray *displayArray = [NSMutableArray new]; //creates array
         
         
-        // pull the first number out of the arraygi
-            for (NSNumber *count in multiplierArray) //get intMuliplier from other array
+        // pull the first number out of the array and use it for the loop
+        //int next = 0;
+        NSNumber *multiplier2 = multiplierArray[row];
+        NSInteger intMultiplier = [multiplier2 integerValue];
+        for (int i = 0; i < intMultiplier; i++)
+            //for (NSNumber *count in multiplierArray) //get intMuliplier from other array
             {
                 
                //load the displayNumber into an mutable array as objects
                 [displayArray addObject:displayNumber];
             }
         row = row+1;
-        NSLog (@"%@", displayArray);
+        
+         NSString *whatsInTheDisplayArray = [displayArray componentsJoinedByString:@""];
+         NSLog (@"%@", whatsInTheDisplayArray);
     }
-    
+        
 
     
 //    for (NSArray *count2 in _toBeRetreivedLater)
@@ -98,7 +105,7 @@
 //    NSLog (@"%@", printedResults);
     
 
-    return @"Process has been run for first array";
+    return @"";
 }
 
 @end
