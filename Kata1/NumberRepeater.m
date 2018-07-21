@@ -20,21 +20,23 @@
 
 - (NSString *)process
 {
-    //Unpackage the array contents into a string
+    //Unpackage the multiplier for the for loop as an NSNumber
     NSNumber *multiplier = _toBeRetreivedLater[0][1];
+    //For some reason I have to turn it into an NSInteger for use
     NSInteger intMultiplier = [multiplier integerValue];
+    // Break out the display number for adding to new array a certain number of times
     NSNumber *displayNumber = _toBeRetreivedLater[0][0];
-    NSString *stringFromObject = [NSString stringWithFormat:@"%@", displayNumber];
-    //NSInteger intDisplayNumber = [displayNumber integerValue];
-    //NSLog(@"%ld", (long)value);
+
+    
+    NSMutableArray *displayArray = [NSMutableArray new];
     for (int i = 0; i < intMultiplier; i++)
     {
-        
-       
-        NSString *smashedTogether = [stringFromObject stringByAppendingString:stringFromObject];
-        
+       //load the displayNumber into an mutable array as objects
+        [displayArray addObject:displayNumber];
     }
-    NSLog(@"%@", smashedTogether);
+    // print the array as a string
+    NSString *printedResults = [displayArray componentsJoinedByString:@""];
+    NSLog (@"%@", printedResults);
     return @"Test";
 }
 
