@@ -13,6 +13,6 @@
 
 - (instancetype)initWithNumbers:(NSArray *)numbers;
 
-- (NSString *)process;
+- (NSString*)process;
 
 @end

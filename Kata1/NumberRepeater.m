@@ -18,22 +18,15 @@
     return self;
 }
 
-- (NSString *)process
+- (NSString*)process
 {
-    
-    //need fast enumeration to do this for all the items in the array
-    
-    
-    //Unpackage the multiplier for the for loop as an NSNumber
-    
-   
     int row =0;
     NSMutableArray *multiplierArray = [NSMutableArray new];
     
      // this loop gets me the multiple number
     for (NSArray *count in _toBeRetreivedLater)
     {
-        NSNumber *multiplier = _toBeRetreivedLater[row][1]; //loads one object into variable
+        NSNumber *multiplier = _toBeRetreivedLater[row][1]; //loads one object into variable each time
         [multiplierArray addObject:multiplier];//adds the one number to the new array
         row = row+1;
     }
@@ -45,12 +38,10 @@
     // this for loop gets me the display number
     for (NSArray *count in _toBeRetreivedLater)
     {
-        //NSLog (@"%@", _toBeRetreivedLater[row][column]);  //proves the display number
         NSNumber *displayNumber = _toBeRetreivedLater[row][0]; //pulls display numbers out
-        //NSMutableArray *displayArray = [NSMutableArray new]; //creates array
         NSNumber *multiplier2 = multiplierArray[row];// pull the first number out of the array and use it for the loop
         NSInteger intMultiplier = [multiplier2 integerValue];
-        if (row >= 1)
+        if (row >= 1) //placement of the comma
         {
             [displayArray addObject:@","];
         }
@@ -63,8 +54,9 @@
         row = row+1;
        
     }
-    NSLog (@"%@", [displayArray componentsJoinedByString:@""]);
-    return @"";
+   NSString *returnString = [displayArray componentsJoinedByString:@""];
+    //NSLog (@"%@", [displayArray componentsJoinedByString:@""]);
+    return returnString;
 }
 
 @end
